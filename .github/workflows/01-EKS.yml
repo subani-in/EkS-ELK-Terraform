@@ -4,7 +4,9 @@ on:
 
 jobs:
   Plan:
-    uses: subani-in/EkS-ELK-Terraform/.github/workflows/aws_tf_plan.yml@main
+    #uses: subani-in/EkS-ELK-Terraform/.github/workflows/aws_tf_plan.yml@main
+    uses: subani-in/EkS-ELK-Terraform/blob/main/.github/workflows/aws_tf_appy.yml@main
+
 
     with:
       gh_environment: dev
@@ -13,7 +15,8 @@ jobs:
 
   Apply:
     needs: Plan
-    uses: subani-in/EkS-ELK-Terraform/.github/workflows/aws_tf_appy.yml@main
+    #uses: subani-in/EkS-ELK-Terraform/.github/workflows/aws_tf_appy.yml@main
+    uses: subani-in/EkS-ELK-Terraform/blob/main/.github/workflows/aws_tf_appy.yml@main
     with:
       gh_environment: dev
     secrets:
